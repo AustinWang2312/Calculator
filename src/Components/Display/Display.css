@@ -1,0 +1,15 @@
+.display {
+    font-size: 2em;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f4f4f4;
+    text-align: right; 
+    width: 270px;
+    height: 70px;
+    box-sizing: border-box; /* Ensures padding and border are included in the width. */
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;           /* turn this into a flex container */
+    justify-content: flex-end; /* push content to the right */
+}

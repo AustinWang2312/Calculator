@@ -1,10 +1,30 @@
-# Getting Started with Create React App
+### Prerequisites
+Make sure that Node, npm, and python3 are installed by using the following commands
+node --version
+npm --version
+python3 --version
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+### Flask Setup
+
+1. Navigate to the "backend" directory with app.py in it. ('cd backend')
+
+2. If you are on Windows, run set FLASK_APP=.. If you are on Unix, run export FLASK_APP=.
+
+3. Download dependencies using 'pip3 install -r requirements.txt'
+
+some packages I use include:
+flask_cors
+requests
+
+4. Run flask run in terminal.
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm install`
+Run this to install any dependencies for the project
 
 ### `npm start`
 
@@ -14,10 +34,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
 

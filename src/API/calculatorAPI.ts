@@ -1,6 +1,10 @@
+import { Answer } from '../Types/types';
 const BASE_URL = "http://127.0.0.1:5000";
 
-export const calculateResult = async (input: string) => {
+
+//Takes input equation: string and calls backend
+
+export const calculateResult = async (input: string): Promise<Number> => {
     const endpoint = `${BASE_URL}/calculate`;
     const response = await fetch(endpoint, {
         method: 'POST',
@@ -16,6 +20,6 @@ export const calculateResult = async (input: string) => {
         throw new Error(message);
     }
 
-    const data = await response.json();
+    const data: Answer = await response.json();
     return data.result;
 }

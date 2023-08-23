@@ -8,6 +8,8 @@ interface ButtonProps {
     style?: React.CSSProperties;
 }
 
+
+//Basic button component
 const Button: React.FC<ButtonProps> = ({ label, onClick, className, style }) => {
     return (
         <button

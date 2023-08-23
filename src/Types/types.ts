@@ -17,3 +17,7 @@ export type ButtonConfig = {
     label: string;
     type: ButtonType;
 }
+
+export type Answer = {
+    result: Number;
+}

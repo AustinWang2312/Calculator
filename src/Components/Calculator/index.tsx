@@ -8,27 +8,30 @@ import "./Calculator.css";
 
 const Calculator: React.FC = () => {
 
+    //Three states: current input string, current number string, number of open parentheses
     const [input, setInput] = useState<string>("");
     const [currentNumber, setCurrentNumber] = useState<string>("");
     const [openParenCount, setOpenParenCount] = useState<number>(0);
 
-    const fetchCalculationResult = async () => {
-        try {
-            const result: Number = await calculateResult(input); // assuming `input` is your equation string
-            // Handle the response, maybe set it to a state
 
+    //fetch API to set the display to the result and reset state
+    const fetchCalculationResult = async (): Promise<void> => {
+        try {
+            const result: Number = await calculateResult(input);
+            // Handle the response, maybe set it to a state
             const strResult: string = String(result);
             setInput(strResult);
             setOpenParenCount(0);
             setCurrentNumber(strResult);
         } catch (error) {
-            // Handle the error, maybe show an error message to the user
+            // Handle the error, show an error message to the user
             console.error("API call failed:", error);
         }
     };
 
 
-    const handleDigitClick = (value: string) => {
+    //Onclick handler for a digit
+    const handleDigitClick = (value: string): void => {
         console.log(value);
 
         if (input[input.length - 1] !== ')') {
@@ -37,7 +40,8 @@ const Calculator: React.FC = () => {
         }
     };
 
-    const handleDecimalClick = (value: string) => {
+    //Onclick handler for a decimal point
+    const handleDecimalClick = (value: string): void => {
         console.log(value);
         if (!currentNumber.includes('.')) {
             setCurrentNumber(prevNumber => prevNumber + '.');
@@ -45,9 +49,8 @@ const Calculator: React.FC = () => {
         }
     };
     
-
-
-    const handleParenthesisClick = (value: string) => {
+    //Onclick handler for a parenthesis
+    const handleParenthesisClick = (value: string): void => {
         console.log(value);
         const lastChar = input[input.length - 1];
 
@@ -57,8 +60,6 @@ const Calculator: React.FC = () => {
                 setInput(prevInput => prevInput + value);
                 setCurrentNumber('');
                 setOpenParenCount(prevCount => prevCount + 1);
-
-
             }
         }
         else if (value === ')') {
@@ -69,21 +70,16 @@ const Calculator: React.FC = () => {
                 setCurrentNumber('');
                 setOpenParenCount(prevCount => prevCount - 1);
             }
-
         }
-
-        
-        // ... your logic here
     };
     
-    const handleOperatorClick = (value: string) => {
+    //Onclick handler for an Operator
+    const handleOperatorClick = (value: string): void => {
         console.log(value);
-
         if (!input) {
             // If the input is empty, don't allow starting with operator
             return;
         }
-
 
         const lastChar = input[input.length - 1];
 
@@ -102,14 +98,15 @@ const Calculator: React.FC = () => {
         }
     };
 
-    const handleEqualsClick = (value: string) => {
+    //Onclick handler for '=' button
+    const handleEqualsClick = (value: string): void => {
         console.log(value);
-
         fetchCalculationResult();
     };
 
 
-    const handleDelClick = (value: string) => {
+    //Onclick handler for a del one char button
+    const handleDelClick = (value: string): void => {
         console.log(value);
 
         if (input.length > 0) {
@@ -131,15 +128,13 @@ const Calculator: React.FC = () => {
             if (lastChar === ')') {
                 setOpenParenCount(prevCount => prevCount + 1)
             }
-            
             setCurrentNumber(newCurrentNumber);
             setInput(prevInput => prevInput.slice(0, -1));
-
         }
-        
     };
 
-    const handleClearClick = (value: string) => {
+    //Onclick handler for a Clear button
+    const handleClearClick = (value: string): void => {
         console.log(value);
 
         setInput('');
@@ -147,6 +142,7 @@ const Calculator: React.FC = () => {
         setOpenParenCount(0);
     };
 
+    //Button property list
     const buttonProperties: {[key in ButtonType]: ButtonProps} = {
         [ButtonType.DIGIT]: {
             class: '',
@@ -178,6 +174,7 @@ const Calculator: React.FC = () => {
         }
     }
 
+    //Button Configs to be added in Calculator button-grid
     const buttonsConfig: ButtonConfig[] = [
         { label: 'C', type: ButtonType.CLEAR},
         { label: 'DEL', type: ButtonType.DELETE},
@@ -201,7 +198,7 @@ const Calculator: React.FC = () => {
         { label: '/', type: ButtonType.OPERATOR}
     ];
 
-
+    //Rendering, map our button configs to actual button components and display port
     return (
         <div className="calculator">
             <Display value={input} />

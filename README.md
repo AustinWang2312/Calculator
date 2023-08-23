@@ -1,13 +1,13 @@
-### Project Overview
+# Calculator Project
 ## Description
 This simulates a basic calculator with the ability to perform basic arithmetic operations.
 This was developed using Flask/Python3 for the backend and React/Typescript for the frontend.
-Authored by Austin Wang
+Authored by Austin Wang.
 
 ## Usage
 Users can input characters into the calculator by pressing the correct buttons. The equation will be evaluated from left to right in PEMDAS order.
 
-# Buttons
+## Buttons
 1. 'C': This red clear button clears all input from the display
 2. 'DEL': This pink button deletes the latest character added to the display
 3. '(': This adds an open parenthesis to the equation. This must follow an operator or start the equation.
@@ -18,8 +18,9 @@ Users can input characters into the calculator by pressing the correct buttons. 
 8. '=': This is the equals button and will evaluate the equation and show the output on the display.
 
 
+# Setup
 
-### Prerequisites|
+### Prerequisites
 Make sure that Node, npm, and python3 are installed by using the following commands
 1. node --version
 2. npm --version

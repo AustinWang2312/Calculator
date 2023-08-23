@@ -6,7 +6,7 @@ CORS(app, resources={r"/calculate": {"origins": "http://localhost:3000"}})
 
 
 #Top Level function to solve equation
-def solveEquation(equation):
+def solve_equation(equation):
     return round(helper(list(equation)), 9)
 
 #adjusts current number appropriately when adding digits
@@ -82,7 +82,7 @@ def calculate():
 
     #Try to solve equation, otherwise return error
     try:
-        result = solveEquation(expression)
+        result = solve_equation(expression)
         return jsonify({'result': result})
     except Exception as e:
         return jsonify({'error': str(e)}), 400

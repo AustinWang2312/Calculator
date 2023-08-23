@@ -12,6 +12,7 @@ const Calculator: React.FC = () => {
     const [input, setInput] = useState<string>("");
     const [currentNumber, setCurrentNumber] = useState<string>("");
     const [openParenCount, setOpenParenCount] = useState<number>(0);
+    const [hasError, setHasError] = useState<boolean>(false);
 
 
     //fetch API to set the display to the result and reset state
@@ -26,12 +27,24 @@ const Calculator: React.FC = () => {
         } catch (error) {
             // Handle the error, show an error message to the user
             console.error("API call failed:", error);
+            setInput('ERROR');
+            setOpenParenCount(0);
+            setCurrentNumber('');
+            setHasError(true);
         }
     };
+
+    const checkError = (): void => {
+        if (hasError) {
+            setHasError(false);
+            setInput('');
+        }
+    }
 
 
     //Onclick handler for a digit
     const handleDigitClick = (value: string): void => {
+        checkError();
         console.log(value);
 
         if (input[input.length - 1] !== ')') {
@@ -42,7 +55,9 @@ const Calculator: React.FC = () => {
 
     //Onclick handler for a decimal point
     const handleDecimalClick = (value: string): void => {
+        checkError();
         console.log(value);
+
         if (!currentNumber.includes('.')) {
             setCurrentNumber(prevNumber => prevNumber + '.');
             setInput(prevInput => prevInput + '.');
@@ -51,7 +66,9 @@ const Calculator: React.FC = () => {
     
     //Onclick handler for a parenthesis
     const handleParenthesisClick = (value: string): void => {
+        checkError();
         console.log(value);
+
         const lastChar = input[input.length - 1];
 
         if (value === '(') {
@@ -75,6 +92,7 @@ const Calculator: React.FC = () => {
     
     //Onclick handler for an Operator
     const handleOperatorClick = (value: string): void => {
+        checkError();
         console.log(value);
         if (!input) {
             // If the input is empty, don't allow starting with operator
@@ -100,6 +118,7 @@ const Calculator: React.FC = () => {
 
     //Onclick handler for '=' button
     const handleEqualsClick = (value: string): void => {
+        checkError();
         console.log(value);
         fetchCalculationResult();
     };
@@ -107,6 +126,7 @@ const Calculator: React.FC = () => {
 
     //Onclick handler for a del one char button
     const handleDelClick = (value: string): void => {
+        checkError();
         console.log(value);
 
         if (input.length > 0) {
@@ -135,6 +155,7 @@ const Calculator: React.FC = () => {
 
     //Onclick handler for a Clear button
     const handleClearClick = (value: string): void => {
+        checkError();
         console.log(value);
 
         setInput('');

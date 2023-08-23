@@ -11,7 +11,7 @@
 .button-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* 4 columns for 3 digits and 1 operator */
-    gap: 10px; /* space between buttons */
+    gap: 20px; /* space between buttons */
     width: max-content; /* fit the content */
     padding: 20px;
     border: 1px solid #ddd;

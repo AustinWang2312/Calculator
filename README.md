@@ -1,8 +1,29 @@
-### Prerequisites
+### Project Overview
+## Description
+This simulates a basic calculator with the ability to perform basic arithmetic operations.
+This was developed using Flask/Python3 for the backend and React/Typescript for the frontend.
+Authored by Austin Wang
+
+## Usage
+Users can input characters into the calculator by pressing the correct buttons. The equation will be evaluated from left to right in PEMDAS order.
+
+# Buttons
+1. 'C': This red clear button clears all input from the display
+2. 'DEL': This pink button deletes the latest character added to the display
+3. '(': This adds an open parenthesis to the equation. This must follow an operator or start the equation.
+4. ')': This adds a closing parenthesis. There must be a corresponding open parenthesis and this must follow a digit
+5. '+','-','*','/': These are operators and will perform the appropriate mathematical operation. These cannot start the equation and also must not follow another operator.
+6. Digits '0-9': These are the numerical digits, as long as a digit doesn't follow a ), this is valid.
+7. '.': This decimal point button adds a decimal to the current number. If the current number already has a decimal point, it will not be added.
+8. '=': This is the equals button and will evaluate the equation and show the output on the display.
+
+
+
+### Prerequisites|
 Make sure that Node, npm, and python3 are installed by using the following commands
-node --version
-npm --version
-python3 --version
+1. node --version
+2. npm --version
+3. python3 --version
 
 
 ### Flask Setup
@@ -13,13 +34,9 @@ python3 --version
 
 3. Download dependencies using 'pip3 install -r requirements.txt'
 
-some packages I use include:
-flask_cors
-requests
-
 4. Run flask run in terminal.
 
-## Available Scripts
+## React Setup
 
 In the project directory, you can run:
 

@@ -21,21 +21,23 @@ Users can input characters into the calculator by pressing the correct buttons. 
 # Setup
 
 ## Prerequisites
-Make sure that Node, npm, and python3 are installed by using the following commands
-1. node --version
-2. npm --version
-3. python3 --version
+Make sure that Node, npm, and python3 are installed by following the instructions below.
+1. Node/npm are installable here: https://nodejs.dev/en/download/ 
+2. Run `node --version` and `npm --version` to verify.
+
+3. Python3 is installable here: https://www.python.org/downloads/ 
+4. Run `python3 --version`to verify
 
 
 ## Flask Setup
 
-1. Navigate to the "backend" directory with app.py in it. ('cd backend')
+1. Navigate to the "backend" directory with app.py in it. (`cd backend`)
 
-2. If you are on Windows, run set FLASK_APP=.. If you are on Unix, run export FLASK_APP=.
+2. If you are on Windows, run `set FLASK_APP=.`. If you are on Unix, run `export FLASK_APP=.`
 
-3. Download dependencies using 'pip3 install -r requirements.txt'
+3. Download dependencies using `pip3 install -r requirements.txt`
 
-4. Run flask run in terminal.
+4. Run `flask run` in terminal.
 
 ## React Setup
 

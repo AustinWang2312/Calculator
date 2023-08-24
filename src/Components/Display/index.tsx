@@ -1,5 +1,5 @@
 import React from 'react';
-import './Display.css';  // Let's assume you'll have accompanying styles.
+import './Display.css'; 
 
 interface DisplayProps {
     value: string;  // The current value to be displayed.

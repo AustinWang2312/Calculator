@@ -13,54 +13,54 @@ button:hover {
     background-color: #0056b3;
 }
 .button:active {
-    background-color: #004492;  /* Darker shade when clicked */
+    background-color: #004492;  
 }
 
 
 .button--equals {
-    background-color: #FFA500;  /* This is just a standard orange. Adjust to your liking. */
+    background-color: #FFA500;  
 }
 
 .button--equals:hover {
-    background-color: #E59400;  /* Darkened version of #FFA500 */
+    background-color: #E59400;  
 }
 
 .button--equals:active {
-    background-color: #CC7A00;  /* Much darker shade */
+    background-color: #CC7A00;  
 }
 
 .button--operator {
-    background-color: #AABCD1;  /* A calm gray-blue */
+    background-color: #AABCD1;  
 }
 
 .button--operator:hover {
-    background-color: #889CB2;  /* Slightly darker gray-blue */
+    background-color: #889CB2;  
 }
 
 .button--operator:active {
-    background-color: #677B8E;  /* Much darker gray-blue */
+    background-color: #677B8E;  
 }
 
 .button--delete {
-    background-color: #FF9E9E;  /* Pale pinkish-red */
+    background-color: #FF9E9E; 
 }
 
 .button--delete:hover {
-    background-color: #FF8D8D;  /* Slightly deepened shade */
+    background-color: #FF8D8D;  
 }
 
 .button--delete:active {
-    background-color: #FF7C7C;  /* More noticeable deepened shade */
+    background-color: #FF7C7C;  
 }
 
 .button--clear {
-    background-color: #FF3232;  /* Rich red */
+    background-color: #FF3232;  
 }
 
 .button--clear:hover {
-    background-color: #E51D1D;  /* Darkened shade */
+    background-color: #E51D1D; 
 }
 
 .button--clear:active {
-    background-color: #C31313;  /* Even darker shade */
+    background-color: #C31313;  
 }

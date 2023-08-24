@@ -4,7 +4,7 @@ const BASE_URL = "http://127.0.0.1:5000";
 
 //Takes input equation: string and calls backend
 
-export const calculateResult = async (input: string): Promise<Number> => {
+export const calculateResult = async (input: string): Promise<number> => {
     const endpoint = `${BASE_URL}/calculate`;
     const response = await fetch(endpoint, {
         method: 'POST',
